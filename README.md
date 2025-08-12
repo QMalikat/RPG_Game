@@ -1,19 +1,19 @@
 # D-D_Game
 
-Start Scene
-Start in the street
+Start Scene \
+Start in the street \
 Choice: Enter bar
 
-New Scene 
-Choice: Talk to barkeep
-Convosation sequence
+New Scene \
+Choice: Talk to barkeep \
+Convosation sequence \
 Choice: Accept quest
 
-New Scene
-Find the thief
-Convosation sequence
-Choice: Fight
+New Scene \
+Find the thief \
+Convosation sequence \
+Choice: Fight \
 Choice: Kick or slap
 
-New Scene
+New Scene \
 Winner or Loser
