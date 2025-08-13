@@ -16,7 +16,7 @@
 # Conversation text 
 - Welcome – You want a drink 
 - Barkeep 
--- Order a beer 
+- - Order a beer 
 - - Thief stole all the beer, find him 
 - - I will find him (accept quest) 
 - Follow the lead 
