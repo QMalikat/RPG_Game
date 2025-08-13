@@ -1,5 +1,30 @@
-# D-D_Game
+# D-D_Game 2 to list
 
+# Template – Nina \
+- Conversation text field \
+- Grid or pack 
+
+# Coding \
+- Finish Template \
+- Beginning.py \
+- Tavern.py \
+- Thief.py \
+- Fight.py \
+- Winner.py \
+- Loser.py
+
+# Conversation text \
+- Welcome – You want a drink \
+- Barkeep \
+- - Order a beer \
+o	Thief stole all the beer, find him \
+o	I will find him (accept quest) \
+- Follow the lead \
+- Thief – Surrender or I will make you \
+- Winner scene \
+- Loser scene
+
+# Scene overview
 Start Scene \
 Start in the street \
 Choice: Enter bar
