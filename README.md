@@ -1,19 +1,18 @@
 # D-D_Game 2 to list
 
-# Template – Nina 
-- Conversation text field 
-- Grid or pack 
+# Template – DONE 
+- Used grid and the basic for conversation text and choice is complete
 
 # Coding 
-- Finish Template 
-- Beginning.py 
+- Finish Template - DONE
+- Beginning.py - First Layout
 - Tavern.py 
 - Thief.py 
 - Fight.py 
 - Winner.py 
 - Loser.py
 
-# Conversation text 
+# Conversation text
 - Welcome – You want a drink 
 - Barkeep 
 - - Order a beer 
