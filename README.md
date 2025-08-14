@@ -1,43 +1,23 @@
 # D-D_Game 2 to list
 
 # Template – DONE 
-- Used grid and the basic for conversation text and choice is complete
+# Conversation text - DONE
+
+# Image
+- Hero
+- Follow
+- Loser
+- Winner
 
 # Coding 
-- Finish Template - DONE
-- Beginning.py - First Layout
-- Tavern.py 
+- Template - DONE
+- Beginning.py 
+- Stay.py 
+- Tavern.py
+- Follow.py
 - Thief.py 
-- Fight.py 
-- Winner.py 
+- Fight_attack.py
+- Fight_return.py
 - Loser.py
-
-# Conversation text
-- Welcome – You want a drink 
-- Barkeep 
-- - Order a beer 
-- - Thief stole all the beer, find him 
-- - I will find him (accept quest) 
-- Follow the lead 
-- Thief – Surrender or I will make you 
-- Winner scene 
-- Loser scene
-
-# Scene overview
-Start Scene \
-Start in the street \
-Choice: Enter bar
-
-New Scene \
-Choice: Talk to barkeep \
-Convosation sequence \
-Choice: Accept quest
-
-New Scene \
-Find the thief \
-Convosation sequence \
-Choice: Fight \
-Choice: Kick or slap
-
-New Scene \
-Winner or Loser
+- Winner.py
+- Tavern_win.py
