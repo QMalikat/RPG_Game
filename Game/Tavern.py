@@ -18,24 +18,89 @@ root.geometry("1280x720")
 root.config(bg='#000000')
 
 # SCENE CONVERSATION DATA & FUNCTIONS
-conversation = [
-    {"type": "text", "text": "You are standing in a dark alley. A black cat hisses at you, its eyes glinting in the dim light."},
-    {"type": "text", "text": "Your throat is dry and you desperately need something to drink."},
-    {"type": "choice", "text": "What will you do?", "choices": [
-        {"label": "Go to Tavern", "command": lambda: Choose_tavern()},
-        {"label": "Stay in the alley", "command": lambda: Choose_stay()},
+conversation = [{
+    "type": "text",
+    "text": "The tavern smells of smoked meat, spilled ale, and candle wax."
+    "The murmur of conversation fades as the door creaks shut behind you."
+    },
+    {
+    "type": "text", 
+    "text": "Behind the counter stands an older man with a neatly trimmed white beard, his eyes sharp and wary."
+    },
+    {
+    "type": "choice", 
+    "text": "What will you do?", 
+    "choices": [
+        {"label": "Ask for ale", "command": lambda: Choose_ale()},
+        {"label": "Ask for wine", "command": lambda: Choose_wine()},
     ]}
 ]
 
-#New scene function
-def Choose_tavern():
-    root.destroy() 
-    import Tavern
+def Choose_ale():           
+    global current_step
+    # Remove the last index from "conversation"
+    conversation.pop()
+    # Add new items to conversation list
+    conversation.append({
+        "type": "text",
+        "text": "Ah, you'd like a drink, eh? Well… someone broke in last night and stole everything. I've got nothing left to sell."
+    
+    })
+    conversation.append({
+        "type": "text",
+        "text": "He leans closer, lowering his voice."
+    })
+    conversation.append({
+        "type": "text",
+        "text": "But… there's a trail of broken glass and spilled liquor leading into the alley behind the tavern."
+    })
+    conversation.append({
+        "type": "text",
+        "text": "If you can track down the thief and recover what's mine, the first drink of my finest mead is on the house"
+    })
+    conversation.append({
+            "type": "choice", 
+    "text": "What will you do?", 
+    "choices": [
+        {"label": "Follow the footsteps", "command": lambda: Follow_footprints()},
+        {"label": "Follow the broken glass", "command": lambda: Follow_brokenglass()},
+    ]})
+    # Reset the conversation list step to index 0
+    current_step = len(conversation) - 5
+    show_step()
 
-#New scene function
-def Choose_stay():
-    root.destroy() 
-    import Stay
+def Choose_wine():
+    global current_step
+    # Remove the last index from "conversation"
+    conversation.pop()
+    # Add new items to conversation list
+    conversation.append({
+        "type": "text",
+        "text": "Ah, you'd like a drink, eh? Well… someone broke in last night and stole everything. I've got nothing left to sell."
+    })
+    conversation.append({
+        "type": "text",
+        "text": "He leans closer, lowering his voice."
+    })
+    conversation.append({
+        "type": "text",
+        "text": "But… there's a trail of broken glass and spilled liquor leading into the alley behind the tavern."
+    })
+    conversation.append({
+        "type": "text",
+        "text": "If you can track down the thief and recover what's mine, the first drink of my finest mead is on the house"
+    })
+    conversation.append({
+            "type": "choice", 
+    "text": "What will you do?", 
+    "choices": [
+        {"label": "Follow the footsteps", "command": lambda: Follow_footprints()},
+        {"label": "Follow the broken glass", "command": lambda: Follow_brokenglass()},
+    ]})
+    # Reset the conversation list step to index 0
+    current_step = len(conversation) - 5
+    show_step()
+
 
 # Grid framework for layout
 root.grid_rowconfigure(0, weight=0)  # Background image
@@ -47,7 +112,7 @@ root.grid_columnconfigure(2, weight=0)  # NPC
 
 #Background image - Needs to be png files
 #Nice to have: Background pictures that gets bigger with the window
-Bg_image_path = resource_path("Image/Background/Tavern.png")
+Bg_image_path = resource_path("Image/Background/TavernIn.png")
 Bg_image = Image.open(Bg_image_path)
 Bg_image = Bg_image.resize((1280, 500))  
 tk_image = ImageTk.PhotoImage(Bg_image)
