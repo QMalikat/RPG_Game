@@ -4,4 +4,6 @@
 # -	Kick
 # -	Slap
 
+# Background: fight scene
+
 # NEXT SCENE Winner or Loser

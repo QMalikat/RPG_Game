@@ -16,8 +16,12 @@
 - Tavern.py - DONE
 - Follow.py
 - Thief.py 
-- Fight.py
+- Fight.py - File name is main.py as of now, halfway done
 - Return_goods.py
 - Loser.py
 - Winner.py
 - Tavern_win.py
+
+Nice to Have
+- Create a child on Root for smooth scene changes.
+- Nice to have: sound fx.

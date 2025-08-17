@@ -4,5 +4,7 @@
 # Choice
 # Fight back
 
+# Background: image of the thief
+
 # NEXT SCENE Fight:py
 

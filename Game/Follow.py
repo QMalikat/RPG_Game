@@ -5,5 +5,6 @@
 # -	Follow the broken glass 
 # -	Follow the footprint
 
+# Background: broken glass and foot steps on the floor
 
 # NEXT SCENE Thief:py
