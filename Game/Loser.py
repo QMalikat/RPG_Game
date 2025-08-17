@@ -3,5 +3,7 @@
 # -	Darkness swallows you whole.
 # Choice
 # -	Try again?
- 
+
+# Background: Hero on the ground 
+
  # NEXT SCENE Fight.py

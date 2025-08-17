@@ -5,5 +5,6 @@
 # -	Attack him
 # -	Demand he return the stolen gods
 
+# Background: image of the thief
 
 # NEXT SCENE Fight or Return_goods
