@@ -62,12 +62,14 @@ def Choose_ale():
             "type": "choice", 
     "text": "What will you do?", 
     "choices": [
-        {"label": "Follow the footsteps", "command": lambda: Follow_footprints()},
-        {"label": "Follow the broken glass", "command": lambda: Follow_brokenglass()},
+        {"label": "Help the barkeep", "command": lambda: Help_barkeep()},
     ]})
+
     # Reset the conversation list step to index 0
     current_step = len(conversation) - 5
     show_step()
+    root.destroy() 
+    import Follow
 
 def Choose_wine():
     global current_step
@@ -94,12 +96,13 @@ def Choose_wine():
             "type": "choice", 
     "text": "What will you do?", 
     "choices": [
-        {"label": "Follow the footsteps", "command": lambda: Follow_footprints()},
-        {"label": "Follow the broken glass", "command": lambda: Follow_brokenglass()},
+        {"label": "Help the barkeep", "command": lambda: Help_barkeep()},
     ]})
     # Reset the conversation list step to index 0
     current_step = len(conversation) - 5
     show_step()
+    root.destroy() 
+    import Follow
 
 
 # Grid framework for layout

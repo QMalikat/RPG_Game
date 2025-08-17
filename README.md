@@ -11,13 +11,13 @@
 
 # Coding 
 - Template - DONE
-- Beginning.py 
-- Stay.py 
-- Tavern.py
+- Beginning.py - Using Template.py as beginning scene /Sinan
+- Stay.py - DONE
+- Tavern.py - DONE
 - Follow.py
 - Thief.py 
-- Fight_attack.py
-- Fight_return.py
+- Fight.py
+- Return_goods.py
 - Loser.py
 - Winner.py
 - Tavern_win.py
