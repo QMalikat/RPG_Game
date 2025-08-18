@@ -6,23 +6,20 @@
 # Image
 - Hero image
 - Thief Image
-- Follow Background: Borken glass and footprints
-- Loser Background: Hero on the ground 
-- Winner Background: thief on the ground
-- Tavern_new Background: Celebration in the tavern
+- Return goods & Thief background
 
 # Coding 
 - Template - DONE
 - Beginning.py - Using Template.py as beginning scene /Sinan
 - Stay.py - DONE
 - Tavern.py - DONE
-- Follow.py - DONE - NEED NEW BACKGRPUND 
+- Follow.py - DONE 
 - Thief.py - DONE - NEED NEW BACKGRPUND  & THIEF IMAGE
 - Fight.py - File name is main.py as of now, halfway done
 - Return_goods.py - NEED NEW BACKGRPUND  & THIEF IMAGE
-- Loser.py - NEED NEW BACKGRPUND  
-- Winner.py - DONE - NEED NEW BACKGRPUND  & THIEF IMAGE
-- Tavern_win.py - DONE - NEED NEW BACKGRPUND 
+- Loser.py - Done 
+- Winner.py - DONE - THIEF IMAGE
+- Tavern_win.py - DONE 
 
 Nice to Have
 - Create a child on Root for smooth scene changes.
