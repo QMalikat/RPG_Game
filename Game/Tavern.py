@@ -68,7 +68,9 @@ def Choose_ale():
     # Reset the conversation list step to index 0
     current_step = len(conversation) - 5
     show_step()
-    
+
+def Help_barkeep():
+    root.destroy()
     import Follow
 
 def Choose_wine():
@@ -101,8 +103,7 @@ def Choose_wine():
     # Reset the conversation list step to index 0
     current_step = len(conversation) - 5
     show_step()
-   
-    import Follow
+
 
 
 # Grid framework for layout
