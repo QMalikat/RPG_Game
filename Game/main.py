@@ -38,14 +38,14 @@ background_img = pygame.image.load('Game/Image/Background/Beginning.png').conver
 panel_img = pygame.transform.scale(pygame.image.load('Game/Image/Background/panel.png'),(1280, 150)).convert_alpha()
 
 # #button images
-
+attack_img = pygame.image.load('Game/Image/Icons/attack.png').convert_alpha()
 restart_img = pygame.image.load('Game/Image/Icons/try_again.png').convert_alpha()
 # #load victory and defeat images
 victory_img = pygame.image.load('Game/Image/Icons/victory.png').convert_alpha()
 defeat_img = pygame.image.load('Game/Image/Icons/defeat.png').convert_alpha()
-# #sword image
-cursor_img = pygame.image.load('Game/Image/Icons/cursor.png').convert_alpha()
-attack_img = pygame.image.load('Game/Image/Icons/attack.png').convert_alpha()
+#cursor image
+cursor_img = pygame.transform.scale(pygame.image.load('Game/Image/Icons/cursor.png'), (20,20)).convert_alpha()
+
 
 #create function for drawing text
 def draw_text(text, font, text_col, x, y):
@@ -137,7 +137,7 @@ thief_health_bar = HealthBar(1000, screen_height - bottom_panel + 40, thief.hp, 
 
 #create buttons
 attack_button = button.Button(screen, 100, screen_height - bottom_panel + 70, attack_img, 151, 63)
-restart_button = button.Button(screen, 330, 120, restart_img, 192, 63)
+restart_button = button.Button(screen, 1000, screen_height - bottom_panel + 70, restart_img, 192, 63)
 
 run = True
 while run:
@@ -158,11 +158,6 @@ while run:
     # mouse position
     pos = pygame.mouse.get_pos()
 
-    #hide mouse
-    pygame.mouse.set_visible(False)
-    #show sword in place of mouse cursor
-    screen.blit(cursor_img, pos)
-
 	#control player actions
     attack = False
     target = None
@@ -170,7 +165,7 @@ while run:
     pos = pygame.mouse.get_pos()
 
     # change collide point to attack button once button is created
-    if thief.rect.collidepoint(pos):    
+    if button.rect.collidepoint(pos):    
         if clicked == True and thief.alive == True:
             attack = True
             target = thief
@@ -183,6 +178,11 @@ while run:
 
     attack_button.draw()
     restart_button.draw()
+
+    #hide mouse
+    pygame.mouse.set_visible(False)
+    #show sword in place of mouse cursor
+    screen.blit(cursor_img, pos)
 
     #player action
     if hero.alive == True:
