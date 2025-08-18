@@ -1,12 +1,13 @@
 # D-D_Game 2 to list
-
-# Coding 
-- main (fight)
+- Main (fight)
+- Testing
+- Fix background image sizing
   
 # Nice to Have
 - Create a child on Root for smooth scene changes.
 - Nice to have: sound fx.
-
+- New tavern_win picture
+- New stolen goods picture
 
 # DONE 
 - Conversation text
