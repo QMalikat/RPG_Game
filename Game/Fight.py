@@ -7,3 +7,5 @@
 # Background: fight scene
 
 # NEXT SCENE Winner or Loser
+
+# This file is omitted with main.py

@@ -74,35 +74,7 @@ def Help_barkeep():
     import Follow
 
 def Choose_wine():
-    global current_step
-    # Remove the last index from "conversation"
-    conversation.pop()
-    # Add new items to conversation list
-    conversation.append({
-        "type": "text",
-        "text": "Ah, you'd like a drink, eh? Well… someone broke in last night and stole everything. I've got nothing left to sell."
-    })
-    conversation.append({
-        "type": "text",
-        "text": "He leans closer, lowering his voice."
-    })
-    conversation.append({
-        "type": "text",
-        "text": "But… there's a trail of broken glass and spilled liquor leading into the alley behind the tavern."
-    })
-    conversation.append({
-        "type": "text",
-        "text": "If you can track down the thief and recover what's mine, the first drink of my finest mead is on the house"
-    })
-    conversation.append({
-            "type": "choice", 
-    "text": "What will you do?", 
-    "choices": [
-        {"label": "Help the barkeep", "command": lambda: Help_barkeep()},
-    ]})
-    # Reset the conversation list step to index 0
-    current_step = len(conversation) - 5
-    show_step()
+    Choose_ale()
 
 
 
@@ -116,7 +88,7 @@ root.grid_columnconfigure(2, weight=0)  # NPC
 
 #Background image - Needs to be png files
 #Nice to have: Background pictures that gets bigger with the window
-Bg_image_path = resource_path("Game/Image/Background/TavernIn.png")
+Bg_image_path = resource_path("Image/Background/TavernIn.png")
 Bg_image = Image.open(Bg_image_path)
 Bg_image = Bg_image.resize((1280, 500))  
 tk_image = ImageTk.PhotoImage(Bg_image)
@@ -125,7 +97,7 @@ background_label = Label(root, image=tk_image)
 background_label.grid(row=0, column=0, columnspan=3, sticky="nsew")
 
 #Character pictures - Hero
-hero_image_path = resource_path("Game/Image/Character/Hero.png")
+hero_image_path = resource_path("Image/Character/Hero.png")
 hero_image = Image.open(hero_image_path)
 hero_image = hero_image.resize((120, 120))
 hero_tk = ImageTk.PhotoImage(hero_image)
@@ -134,7 +106,7 @@ hero_label = Label(root, image=hero_tk, bg='#000000')
 hero_label.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
 
 #Character pictures - Swift NPC with name of picture
-npc_image_path = resource_path("Game/Image/Character/Barkeep.png")
+npc_image_path = resource_path("Image/Character/Barkeep.png")
 npc_image = Image.open(npc_image_path)
 npc_image = npc_image.resize((120, 120))
 npc_tk = ImageTk.PhotoImage(npc_image)
