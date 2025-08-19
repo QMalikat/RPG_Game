@@ -32,22 +32,6 @@ font = pygame.font.SysFont('Times New Roman', 26)
 red = (255, 0, 0)
 green = (0, 255, 0)
 
-
-# load images
-# background image
-background_img = pygame.image.load('Image/Background/Beginning.png').convert_alpha()
-# conversation panel image
-panel_img = pygame.transform.scale(pygame.image.load('Image/Background/panel.png'),(1280, 150)).convert_alpha()
-
-# button images
-attack_img = pygame.image.load('Image/Icons/attack.png').convert_alpha()
-restart_img = pygame.image.load('Image/Icons/try_again.png').convert_alpha()
-tavern_img = pygame.image.load('Image/Icons/Tavern.png').convert_alpha()
-# load victory and defeat images
-victory_img = pygame.image.load('Image/Icons/victory.png').convert_alpha()
-defeat_img = pygame.image.load('Image/Icons/defeat.png').convert_alpha()
-# cursor image
-
 #load images
 #background image
 background_img = pygame.image.load('Image/Background/Beginning.png').convert_alpha()
