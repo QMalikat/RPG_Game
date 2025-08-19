@@ -1,29 +1,24 @@
 # D-D_Game 2 to list
+- Make it more obviously when you use a button - hover and maybe click effect. 
+- Make it the same screen and dont destroy it
+- Background image resizing
+- Make fight more dynamic, when you can attack, how the rules of fighting is and so on.
 
-# Template – DONE 
-# Conversation text - DONE
+# Nice to Have
+- Sound effect 
+- New tavern_win picture
+- New stolen goods picture
 
-# Image
-- Hero image
-- Thief Image
-- Follow Background: Borken glass and footprints
-- Loser Background: Hero on the ground 
-- Winner Background: thief on the ground
-- Tavern_new Background: Celebration in the tavern
-
-# Coding 
-- Template - DONE
-- Beginning.py - Using Template.py as beginning scene /Sinan
-- Stay.py - DONE
-- Tavern.py - DONE
-- Follow.py - DONE - NEED NEW BACKGRPUND 
-- Thief.py - DONE - NEED NEW BACKGRPUND  & THIEF IMAGE
-- Fight.py - File name is main.py as of now, halfway done
-- Return_goods.py - NEED NEW BACKGRPUND  & THIEF IMAGE
-- Loser.py - NEED NEW BACKGRPUND  
-- Winner.py - DONE - NEED NEW BACKGRPUND  & THIEF IMAGE
-- Tavern_win.py - DONE - NEED NEW BACKGRPUND 
-
-Nice to Have
-- Create a child on Root for smooth scene changes.
-- Nice to have: sound fx.
+# DONE 
+- Conversation text
+- Background imagfe and profile pictures
+- Template
+- Beginning / template
+- Stay
+- Tavern
+- Follow
+- Thief
+- Return goods
+- Loser
+- Winner
+- Tavern_win

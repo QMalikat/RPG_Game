@@ -41,7 +41,7 @@ root.grid_columnconfigure(2, weight=0)  # NPC
 
 #Background image - Needs to be png files
 #Nice to have: Background pictures that gets bigger with the window
-Bg_image_path = resource_path("Image/Background/Beginning.png")
+Bg_image_path = resource_path("Image/Background/Winner.png")
 Bg_image = Image.open(Bg_image_path)
 Bg_image = Bg_image.resize((1280, 500), Image.Resampling.LANCZOS)
 tk_image = ImageTk.PhotoImage(Bg_image)

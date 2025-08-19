@@ -32,6 +32,7 @@ font = pygame.font.SysFont('Times New Roman', 26)
 red = (255, 0, 0)
 green = (0, 255, 0)
 
+
 # load images
 # background image
 background_img = pygame.image.load('Image/Background/Beginning.png').convert_alpha()
@@ -46,6 +47,22 @@ tavern_img = pygame.image.load('Image/Icons/Tavern.png').convert_alpha()
 victory_img = pygame.image.load('Image/Icons/victory.png').convert_alpha()
 defeat_img = pygame.image.load('Image/Icons/defeat.png').convert_alpha()
 # cursor image
+
+#load images
+#background image
+background_img = pygame.image.load('Image/Background/Beginning.png').convert_alpha()
+#panel image
+panel_img = pygame.transform.scale(pygame.image.load('Image/Background/panel.png'),(1280, 150)).convert_alpha()
+
+# #button images
+attack_img = pygame.image.load('Image/Icons/attack.png').convert_alpha()
+restart_img = pygame.image.load('Image/Icons/try_again.png').convert_alpha()
+tavern_img = pygame.image.load('Image/Icons/Tavern.png').convert_alpha()
+# #load victory and defeat images
+victory_img = pygame.image.load('Image/Icons/victory.png').convert_alpha()
+defeat_img = pygame.image.load('Image/Icons/defeat.png').convert_alpha()
+#cursor image
+
 cursor_img = pygame.transform.scale(pygame.image.load('Image/Icons/cursor.png'), (20,20)).convert_alpha()
 
 
@@ -147,6 +164,7 @@ attack_button = button.Button(screen, 100, screen_height - bottom_panel + 70, at
 restart_button = button.Button(screen, 1000, screen_height - bottom_panel + 70, restart_img, 192, 63)
 tavern_button = button.Button(screen, 1000, screen_height - bottom_panel + 70, tavern_img, 250, 63)
 
+#Running the game
 run = True
 while run:
 
