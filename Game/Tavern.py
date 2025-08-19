@@ -74,35 +74,7 @@ def Help_barkeep():
     import Follow
 
 def Choose_wine():
-    global current_step
-    # Remove the last index from "conversation"
-    conversation.pop()
-    # Add new items to conversation list
-    conversation.append({
-        "type": "text",
-        "text": "Ah, you'd like a drink, eh? Well… someone broke in last night and stole everything. I've got nothing left to sell."
-    })
-    conversation.append({
-        "type": "text",
-        "text": "He leans closer, lowering his voice."
-    })
-    conversation.append({
-        "type": "text",
-        "text": "But… there's a trail of broken glass and spilled liquor leading into the alley behind the tavern."
-    })
-    conversation.append({
-        "type": "text",
-        "text": "If you can track down the thief and recover what's mine, the first drink of my finest mead is on the house"
-    })
-    conversation.append({
-            "type": "choice", 
-    "text": "What will you do?", 
-    "choices": [
-        {"label": "Help the barkeep", "command": lambda: Help_barkeep()},
-    ]})
-    # Reset the conversation list step to index 0
-    current_step = len(conversation) - 5
-    show_step()
+    Choose_ale()
 
 
 
