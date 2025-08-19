@@ -1,11 +1,11 @@
 # D-D_Game 2 to list
-- Main (fight)
-- Testing
-- Fix background image sizing
-  
+- Make it more obviously when you use a button - hover and maybe click effect. 
+- Make it the same screen and dont destroy it
+- Background image resizing
+- Make fight more dynamic, when you can attack, how the rules of fighting is and so on.
+
 # Nice to Have
-- Create a child on Root for smooth scene changes.
-- Nice to have: sound fx.
+- Sound effect 
 - New tavern_win picture
 - New stolen goods picture
 
