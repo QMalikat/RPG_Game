@@ -30,7 +30,7 @@ conversation = [
 #New scene function
 def Choose_Template():
     root.destroy() 
-    import Tenplate
+    import Template
 
 #New scene function
 def Choose_End_game():

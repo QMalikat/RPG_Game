@@ -1,7 +1,6 @@
 import pygame
 import random
-import button
-
+import Text_button as button
 
 pygame.init()
 
@@ -26,27 +25,25 @@ clicked = False
 game_over = 0
 
 # define fonts
-font = pygame.font.SysFont('Times New Roman', 26)
+font = pygame.font.SysFont('Times New Roman', 28)
+font2 = pygame.font.SysFont('Times New Roman', 70)
 
 # define colours
 red = (255, 0, 0)
 green = (0, 255, 0)
+White = (255, 255, 255)
 
 #load images
 #background image
-background_img = pygame.image.load('Image/Background/Beginning.png').convert_alpha()
+background_img = pygame.image.load('Image/Background/Fight.2.png').convert_alpha()
 #panel image
 panel_img = pygame.transform.scale(pygame.image.load('Image/Background/panel.png'),(1280, 150)).convert_alpha()
 
-# #button images
-attack_img = pygame.image.load('Image/Icons/attack.png').convert_alpha()
-restart_img = pygame.image.load('Image/Icons/try_again.png').convert_alpha()
-tavern_img = pygame.image.load('Image/Icons/Tavern.png').convert_alpha()
 # #load victory and defeat images
 victory_img = pygame.image.load('Image/Icons/victory.png').convert_alpha()
 defeat_img = pygame.image.load('Image/Icons/defeat.png').convert_alpha()
-#cursor image
 
+#cursor image
 cursor_img = pygame.transform.scale(pygame.image.load('Image/Icons/cursor.png'), (20,20)).convert_alpha()
 
 
@@ -65,8 +62,8 @@ def draw_panel():
     # draw panel rectangle
     screen.blit(panel_img, (0, screen_height - bottom_panel))
 	# show hero stats
-    draw_text(f'{hero.name} HP: {hero.hp}', font, red, 100, screen_height - bottom_panel + 10)
-    draw_text(f'{thief.name} HP: {thief.hp}', font, red, 1000, screen_height - bottom_panel + 10) 
+    draw_text(f'{hero.name} HP: {hero.hp}', font, White, 100, screen_height - bottom_panel + 10)
+    draw_text(f'{thief.name} HP: {thief.hp}', font, White, 1000, screen_height - bottom_panel + 10) 
 
 # fighter class
 class Fighter():
@@ -76,7 +73,7 @@ class Fighter():
         self.hp = max_hp
         self.strength = strength
         self.alive = True
-        self.image = pygame.image.load(f'Image/Character/{self.name}/0.png')
+        self.image = pygame.image.load(f'Image/Character/{self.name}/0.1.png')
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
 
@@ -119,7 +116,7 @@ class HealthBar():
 class DamageText(pygame.sprite.Sprite):
 	def __init__(self, x, y, damage, colour):
 		pygame.sprite.Sprite.__init__(self)
-		self.image = font.render(damage, True, colour)
+		self.image = font2.render(damage, True, colour)
 		self.rect = self.image.get_rect()
 		self.rect.center = (x, y)
 		self.counter = 0
@@ -135,18 +132,21 @@ class DamageText(pygame.sprite.Sprite):
 # create damage text
 damage_text_group = pygame.sprite.Group()
 
-# create characters
-hero = Fighter(500, 400, 'Hero', 30, 10)
-thief = Fighter(900, 400, 'Thief', 20, 6)
+# create characters (fight class, XY coordinates, name, max_hp, strength"bonus damagde")
+hero = Fighter(400, 400, 'Hero', 30, 8)
+thief = Fighter(1000, 400, 'Thief', 30, 30)
 
 # create hp bars
 hero_health_bar = HealthBar(100, screen_height - bottom_panel + 40, hero.hp, hero.max_hp)
 thief_health_bar = HealthBar(1000, screen_height - bottom_panel + 40, thief.hp, thief.max_hp)
 
-# create buttons
-attack_button = button.Button(screen, 100, screen_height - bottom_panel + 70, attack_img, 151, 63)
-restart_button = button.Button(screen, 1000, screen_height - bottom_panel + 70, restart_img, 192, 63)
-tavern_button = button.Button(screen, 1000, screen_height - bottom_panel + 70, tavern_img, 250, 63)
+# create buttons and placing them on the screen
+attack_button = button.Button(screen, 300, screen_height - bottom_panel + 70,
+                              200, 63, "Attack", font)
+win_button = button.Button(screen, 550, screen_height - bottom_panel + 70,
+                              200, 63, "You win", font)
+lose_button = button.Button(screen, 800, screen_height - bottom_panel + 70,
+                            200, 63, "You lose", font)
 
 #Running the game
 run = True
@@ -217,21 +217,18 @@ while run:
     # check if game is over
     if game_over != 0:
         if game_over == 1:
-            screen.blit(victory_img, (250, 50))
-            if tavern_button.draw():
+            screen.blit(victory_img, (500, 50))
+            if win_button.draw():
                 # close pygame ifvictory and open tavern scene
                 pygame.quit()
-                import Tavern_win
+                import Winner
 
-                # if defeat, restart the fight 
-                if game_over == -1:
-                    screen.blit(defeat_img, (290, 50))
-                    if restart_button.draw():
-                        hero.reset()
-                        thief.reset()
-                        current_fighter = 1
-                        action_cooldown
-                        game_over = 0
+        # if defeat, restart the fight 
+        if game_over == -1:
+            screen.blit(defeat_img, (500, 50))
+            if lose_button.draw():  
+                pygame.quit()
+                import Loser
 
     # hide the original mouse pointer
     pygame.mouse.set_visible(False)

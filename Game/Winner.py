@@ -20,9 +20,10 @@ root.config(bg='#000000')
 # SCENE CONVERSATION DATA & FUNCTIONS
 conversation = [
     {"type": "text", "text": "At last, after a flurry of blows, the thief staggers back, breathing heavily. His defiance melts into exhaustion."},
-    {"type": "text", "text": '"Fine… you win," he growls. "I’ll return what’s left… and I’ll pay the tavern back for the rest.'},
-    {"type": "choice", "text": "What will you do?", "choices": [
-        {"label": "You win", "command": lambda: Tavern_win()},
+    {"type": "text", "text": 'He falls down to the wet cobblestone, defeated but alive.'},     
+    {"type": "text", "text": '"Fine… you win," he growls. "I’ll return what’s left… and I’ll pay the tavern back for the rest.'}, 
+    {"type": "choice", "text": "", "choices": [
+        {"label": "Go to tavern", "command": lambda: Tavern_win()},
     ]}
 ]
 
@@ -57,15 +58,6 @@ hero_tk = ImageTk.PhotoImage(hero_image)
 
 hero_label = Label(root, image=hero_tk, bg='#000000')
 hero_label.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
-
-#Character pictures - Swift NPC with name of picture
-npc_image_path = resource_path("Image/Character/Barkeep.png")
-npc_image = Image.open(npc_image_path)
-npc_image = npc_image.resize((120, 120))
-npc_tk = ImageTk.PhotoImage(npc_image)
-
-npc_label = Label(root, image=npc_tk, bg='#000000')
-npc_label.grid(row=1, column=2, sticky="nsew", padx=10, pady=10)
 
 #Conversation text
 Conversation = Label(root, text="", bg='#000000', fg='#FFFFFF', font=('Arial', 20), wraplength=800)
