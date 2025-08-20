@@ -1,11 +1,13 @@
 import tkinter as tk
+from tkinter import *
 from page1 import create_page1
 from page2 import create_page2
 from page3 import create_page3
+from scene import create_scene
 
 root = tk.Tk()
 root.title("Demo")
-root.geometry("650x500")
+root.geometry("1280x720")
 root.resizable(False, False)
 
 container = tk.Frame(root)
@@ -29,6 +31,8 @@ def switch_page(page_name):
         current_frame = create_page2(container, switch_page)
     elif page_name == "page3":
         current_frame = create_page3(container, switch_page)
+    elif page_name == "scene":
+        current_frame = create_scene(container, switch_page)
 
     # Display the new page
     current_frame.pack(fill="both", expand=True)
