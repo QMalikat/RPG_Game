@@ -28,8 +28,7 @@ def create_return_goods(container, switch_page):
     ]
 
     def Choose_Fight():
-        return_goods.destroy() 
-        import main
+        switch_page("main")
 
     # Grid framework for layout
     return_goods.grid_rowconfigure(0, weight=0)  # Background image

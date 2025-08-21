@@ -75,7 +75,7 @@ def create_follow(container, switch_page):
 
     # Button frame for choices
     button_frame = Frame(follow, bg="#000000")
-    button_frame.grid(row=2, column=0, columnspan=3, sticky="nsew") 
+    button_frame.grid(row=2, column=1, columnspan=2, sticky="nsew") 
 
     # GAME FUNKTIONALITY
     def show_step():

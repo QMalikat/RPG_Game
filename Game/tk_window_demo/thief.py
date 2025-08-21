@@ -29,7 +29,7 @@ def create_thief(container, switch_page):
     ]
 
     def Choose_Fight():
-        import main
+        switch_page("main")
 
     def Choose_Retun_Goods():
         switch_page("return_goods")
