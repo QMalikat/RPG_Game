@@ -12,21 +12,21 @@ class Button():
         self.font = font
         self.text_color = text_color
         self.color = color
-        self.hover_color = hover_color
         self.clicked = False
+
+# Colors of the button
+    def set_color(self, color):
+        self.color = color
 
     def draw(self):
         action = False
-        pos = pygame.mouse.get_pos()
+        pygame.draw.rect(self.surface, self.color, self.rect)
 
-        # check hover
-        if self.rect.collidepoint(pos):
-            pygame.draw.rect(self.surface, self.hover_color, self.rect)
-            if pygame.mouse.get_pressed()[0] == 1 and not self.clicked:
+        # check click
+        if pygame.mouse.get_pressed()[0] == 1 and not self.clicked:
+            if self.rect.collidepoint(pygame.mouse.get_pos()):
                 action = True
                 self.clicked = True
-        else:
-            pygame.draw.rect(self.surface, self.color, self.rect)
 
         if pygame.mouse.get_pressed()[0] == 0:
             self.clicked = False

@@ -1,8 +1,18 @@
-# D-D_Game 2 to list
+# D-D_Game user stories 
+Character talk to barkeep (quest master) 
+Character find NPC
+Character talk to NPC
+Character fight NPC
+Character win battle
+Character lose battle
+
+# To do list 
 - Make it more obviously when you use a button - hover and maybe click effect. 
 - Make it the same screen and dont destroy it
 - Background image resizing
-- Make fight more dynamic, when you can attack, how the rules of fighting is and so on.
+- Background for the start page
+- Name for the game
+- Embed pygame fight scene into tkinter window
 
 # Nice to Have
 - Sound effect 
@@ -10,6 +20,7 @@
 - New stolen goods picture
 
 # DONE 
+- Fightscene with new pictures and green attack button
 - Conversation text
 - Background imagfe and profile pictures
 - Template
@@ -22,3 +33,7 @@
 - Loser
 - Winner
 - Tavern_win
+
+# Requirements
+- Pyton, pygame, tkinter
+
