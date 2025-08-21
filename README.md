@@ -10,6 +10,9 @@ Character lose battle
 - Make it more obviously when you use a button - hover and maybe click effect. 
 - Make it the same screen and dont destroy it
 - Background image resizing
+- Background for the start page
+- Name for the game
+- Embed pygame fight scene into tkinter window
 
 # Nice to Have
 - Sound effect 
@@ -32,5 +35,5 @@ Character lose battle
 - Tavern_win
 
 # Requirements
-- Pyton, pygame, 
+- Pyton, pygame, tkinter
 
