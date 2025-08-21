@@ -2,7 +2,6 @@
 - Make it more obviously when you use a button - hover and maybe click effect. 
 - Make it the same screen and dont destroy it
 - Background image resizing
-- Make fight more dynamic, when you can attack, how the rules of fighting is and so on.
 
 # Nice to Have
 - Sound effect 
@@ -10,6 +9,7 @@
 - New stolen goods picture
 
 # DONE 
+- Fightscene with new pictures and green attack button
 - Conversation text
 - Background imagfe and profile pictures
 - Template
