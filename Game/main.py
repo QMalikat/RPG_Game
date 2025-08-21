@@ -39,13 +39,12 @@ background_img = pygame.image.load('Image/Background/Fight.2.png').convert_alpha
 #panel image
 panel_img = pygame.transform.scale(pygame.image.load('Image/Background/panel.png'),(1280, 150)).convert_alpha()
 
-# #load victory and defeat images
+#load victory and defeat images
 victory_img = pygame.image.load('Image/Icons/victory.png').convert_alpha()
 defeat_img = pygame.image.load('Image/Icons/defeat.png').convert_alpha()
 
 #cursor image
 cursor_img = pygame.transform.scale(pygame.image.load('Image/Icons/cursor.png'), (20,20)).convert_alpha()
-
 
 # create function for drawing text
 def draw_text(text, font, text_col, x, y):
@@ -56,14 +55,13 @@ def draw_text(text, font, text_col, x, y):
 def draw_bg():
     screen.blit(background_img, (0, 0))
 
-
 # function for drawing conversation panel
 def draw_panel():
     # draw panel rectangle
     screen.blit(panel_img, (0, screen_height - bottom_panel))
 	# show hero stats
-    draw_text(f'{hero.name} HP: {hero.hp}', font, White, 100, screen_height - bottom_panel + 10)
-    draw_text(f'{thief.name} HP: {thief.hp}', font, White, 1000, screen_height - bottom_panel + 10) 
+    draw_text(f'{hero.name} HP: {hero.hp}', font, White, 100, screen_height - bottom_panel + 20)
+    draw_text(f'{thief.name} HP: {thief.hp}', font, White, 1000, screen_height - bottom_panel + 20) 
 
 # fighter class
 class Fighter():
@@ -134,18 +132,18 @@ damage_text_group = pygame.sprite.Group()
 
 # create characters (fight class, XY coordinates, name, max_hp, strength"bonus damagde")
 hero = Fighter(400, 400, 'Hero', 30, 8)
-thief = Fighter(1000, 400, 'Thief', 30, 30)
+thief = Fighter(1000, 400, 'Thief', 30, 6)
 
 # create hp bars
-hero_health_bar = HealthBar(100, screen_height - bottom_panel + 40, hero.hp, hero.max_hp)
-thief_health_bar = HealthBar(1000, screen_height - bottom_panel + 40, thief.hp, thief.max_hp)
+hero_health_bar = HealthBar(100, screen_height - bottom_panel + 70, hero.hp, hero.max_hp)
+thief_health_bar = HealthBar(1000, screen_height - bottom_panel + 70, thief.hp, thief.max_hp)
 
 # create buttons and placing them on the screen
 attack_button = button.Button(screen, 300, screen_height - bottom_panel + 70,
                               200, 63, "Attack", font)
-win_button = button.Button(screen, 550, screen_height - bottom_panel + 70,
+win_button = button.Button(screen, 525, screen_height - bottom_panel + 70,
                               200, 63, "You win", font)
-lose_button = button.Button(screen, 800, screen_height - bottom_panel + 70,
+lose_button = button.Button(screen, 750, screen_height - bottom_panel + 70,
                             200, 63, "You lose", font)
 
 #Running the game
@@ -184,15 +182,20 @@ while run:
     if game_over == 0:
     # player action
         if hero.alive == True:
-            if current_fighter == 1:
+            if current_fighter == 1: 
                 action_cooldown += 1
+                # Check for player action
                 if action_cooldown >= action_wait_time:
-                    # look for player action
+                    attack_button.set_color((0, 255, 0)) # Green ready button
+                else:
+                    attack_button.set_color((255, 0, 0)) # Red not ready button
                     # attack
+                if action_cooldown >= action_wait_time:
                     if attack == True and target != None:
                         hero.attack(target)
                         current_fighter += 1
                         action_cooldown = 0
+                        attack_button.set_color((255, 0, 0))
 
         # Enemy action
         if current_fighter == 2:
@@ -214,10 +217,14 @@ while run:
     if alive_thieves == 0:
         game_over = 1
 
+    # check if hero is dead
+    if hero.alive == False:
+        game_over = -1
+
     # check if game is over
     if game_over != 0:
         if game_over == 1:
-            screen.blit(victory_img, (500, 50))
+            screen.blit(victory_img, (300, 50))
             if win_button.draw():
                 # close pygame ifvictory and open tavern scene
                 pygame.quit()
@@ -225,7 +232,7 @@ while run:
 
         # if defeat, restart the fight 
         if game_over == -1:
-            screen.blit(defeat_img, (500, 50))
+            screen.blit(defeat_img, (360, 50))
             if lose_button.draw():  
                 pygame.quit()
                 import Loser
