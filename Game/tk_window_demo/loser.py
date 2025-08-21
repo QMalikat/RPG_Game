@@ -30,7 +30,7 @@ def create_loser(container, switch_page):
 
     #New scene function
     def Choose_Template():
-        switch_page("template")
+        switch_page("main")
 
     #New scene function
     def Choose_End_game():

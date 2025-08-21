@@ -6,7 +6,7 @@ from tavern import create_tavern
 from stay import create_stay
 from follow import create_follow
 from thief import create_thief
-# from main import create_main
+from main import create_main
 from loser import create_loser
 from winner import create_winner
 from return_goods import create_return_goods
@@ -45,8 +45,8 @@ def switch_page(page_name):
         current_frame = create_follow(container, switch_page)
     elif page_name == "thief":
         current_frame = create_thief(container, switch_page)
-    # elif page_name == "main":
-    #     current_frame = create_main(container, switch_page)
+    elif page_name == "main":
+        current_frame = create_main(container, switch_page)
     elif page_name == "loser":
         current_frame = create_loser(container, switch_page)
     elif page_name == "winner":
