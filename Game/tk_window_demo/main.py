@@ -10,10 +10,12 @@ def create_main(container, switch_page):
     bottom_panel = 150
     screen_width = 1280
     screen_height = 550 + bottom_panel
+    running = True
 
     # embed frame
     main = tk.Frame(container, width=screen_width, height=screen_height)
     main.pack(side=LEFT)
+    # main.config(cursor="none")
     # main.config(cursor="none")
 
     # must happen before pygame.init()
@@ -31,7 +33,7 @@ def create_main(container, switch_page):
     current_fighter = 1
     total_fighters = 2
     action_cooldown = 0
-    action_wait_time = 90
+    action_wait_time = 45
     game_over = 0
 
     # define fonts
@@ -48,6 +50,7 @@ def create_main(container, switch_page):
     panel_img = pygame.transform.scale(pygame.image.load('Image/Background/panel.png'), (1280, 150)).convert_alpha()
     victory_img = pygame.image.load('Image/Icons/victory.png').convert_alpha()
     defeat_img = pygame.image.load('Image/Icons/defeat.png').convert_alpha()
+    # cursor_img = pygame.transform.scale(pygame.image.load('Image/Icons/cursor.png'), (20, 20)).convert_alpha()
     # cursor_img = pygame.transform.scale(pygame.image.load('Image/Icons/cursor.png'), (20, 20)).convert_alpha()
 
     # create function for drawing text
@@ -137,10 +140,10 @@ def create_main(container, switch_page):
     lose_button = button.Button(screen, 750, screen_height - bottom_panel + 70, 200, 63, "You lose", font)
 
     # --- MAIN GAME LOOP FUNCTION (replaces while run:) ---
-    running = True
+
 
     def game_loop():
-        nonlocal current_fighter, action_cooldown, game_over
+        nonlocal current_fighter, action_cooldown, game_over, running
         if not running:
             return
         
@@ -203,21 +206,19 @@ def create_main(container, switch_page):
             if game_over == 1:
                 screen.blit(victory_img, (300, 50))
                 if win_button.draw():
-
                     running = False
-                    pygame.quit()
                     switch_page("winner")
 
             if game_over == -1:
                 screen.blit(defeat_img, (360, 50))
                 if lose_button.draw():
-
                     running = False
-                    pygame.quit()
                     switch_page("loser")
 
-
         # custom cursor
+        # pygame.mouse.set_visible(False)
+        # pos = pygame.mouse.get_pos()
+        # screen.blit(cursor_img, pos)
         # pygame.mouse.set_visible(False)
         # pos = pygame.mouse.get_pos()
         # screen.blit(cursor_img, pos)

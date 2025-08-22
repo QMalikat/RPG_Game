@@ -14,7 +14,7 @@ from tavern_win import create_tavern_win
 
 
 root = tk.Tk()
-root.title("Demo")
+root.title("Mead & Misery")
 root.geometry("1280x720")
 root.resizable(False, False)
 
