@@ -16,6 +16,7 @@ def create_main(container, switch_page):
     main = tk.Frame(container, width=screen_width, height=screen_height)
     main.pack(side=LEFT)
     # main.config(cursor="none")
+    # main.config(cursor="none")
 
     # must happen before pygame.init()
     os.environ['SDL_WINDOWID'] = str(main.winfo_id())
@@ -49,6 +50,7 @@ def create_main(container, switch_page):
     panel_img = pygame.transform.scale(pygame.image.load('Image/Background/panel.png'), (1280, 150)).convert_alpha()
     victory_img = pygame.image.load('Image/Icons/victory.png').convert_alpha()
     defeat_img = pygame.image.load('Image/Icons/defeat.png').convert_alpha()
+    # cursor_img = pygame.transform.scale(pygame.image.load('Image/Icons/cursor.png'), (20, 20)).convert_alpha()
     # cursor_img = pygame.transform.scale(pygame.image.load('Image/Icons/cursor.png'), (20, 20)).convert_alpha()
 
     # create function for drawing text
@@ -124,7 +126,10 @@ def create_main(container, switch_page):
 
     # create characters
     hero = Fighter(400, 400, 'Hero', 30, 8)
+
+
     thief = Fighter(1000, 400, 'Thief', 30, 6)
+
 
     hero_health_bar = HealthBar(100, screen_height - bottom_panel + 70, hero.hp, hero.max_hp)
     thief_health_bar = HealthBar(1000, screen_height - bottom_panel + 70, thief.hp, thief.max_hp)
@@ -214,6 +219,9 @@ def create_main(container, switch_page):
         # pygame.mouse.set_visible(False)
         # pos = pygame.mouse.get_pos()
         # screen.blit(cursor_img, pos)
+        # pygame.mouse.set_visible(False)
+        # pos = pygame.mouse.get_pos()
+        # screen.blit(cursor_img, pos)
 
         # process events
         for event in pygame.event.get():
@@ -228,4 +236,6 @@ def create_main(container, switch_page):
 
     # start game loop
     game_loop()
+
     return main
+
