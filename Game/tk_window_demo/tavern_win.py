@@ -26,7 +26,7 @@ def create_tavern_win(container, switch_page):
         },
         {
         "type": "text", 
-        "text": "It’s sweet as honey and warm as a summer evening, and with each sip, the taste of victory lingers on your tongue."
+        "text": "It's sweet as honey and warm as a summer evening, and with each sip, the taste of victory lingers on your tongue."
         },
         {
         "type": "choice", 
@@ -46,7 +46,12 @@ def create_tavern_win(container, switch_page):
             "type": "text",
             "text": "Its eveything you hoped for. A dark and rich ale, with a hint of bitterness that dances on your tongue."
         })
-        
+        conversation.append({"type": "choice", 
+        "text": "You got wasted!", 
+        "choices": [
+            {"label": "End Game", "command": lambda: end_game()}]})
+        show_step()
+
     def Choose_wine():
         global current_step
         # Remove the last index from "conversation"
@@ -56,7 +61,17 @@ def create_tavern_win(container, switch_page):
             "type": "text",
             "text": "Its eveything you hoped for. A sweet and fruity wine, with a hint of spice that warms your soul."
         })
+        conversation.append({"type": "choice", 
+        "text": "You got wasted!", 
+        "choices": [
+            {"label": "End Game", "command": lambda: end_game()}]})
+        show_step
 
+    def end_game():
+        container.quit()
+        container.destroy()
+        
+            
     # Grid framework for layout
     tavern_win.grid_rowconfigure(0, weight=0)  # Background image
     tavern_win.grid_rowconfigure(1, weight=1)  # Characters pictures & conversation
