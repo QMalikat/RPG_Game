@@ -123,15 +123,18 @@ def create_main(container, switch_page):
 
     # create characters
     hero = Fighter(400, 400, 'Hero', 30, 8)
-    thief = Fighter(1000, 400, 'Thief', 30, 8)
 
-    hero_health_bar = HealthBar(100, screen_height - bottom_panel + 40, hero.hp, hero.max_hp)
-    thief_health_bar = HealthBar(1000, screen_height - bottom_panel + 40, thief.hp, thief.max_hp)
+
+    thief = Fighter(1000, 400, 'Thief', 30, 6)
+
+
+    hero_health_bar = HealthBar(100, screen_height - bottom_panel + 70, hero.hp, hero.max_hp)
+    thief_health_bar = HealthBar(1000, screen_height - bottom_panel + 70, thief.hp, thief.max_hp)
 
     # buttons
     attack_button = button.Button(screen, 300, screen_height - bottom_panel + 70, 200, 63, "Attack", font)
-    win_button = button.Button(screen, 550, screen_height - bottom_panel + 70, 200, 63, "You win", font)
-    lose_button = button.Button(screen, 800, screen_height - bottom_panel + 70, 200, 63, "You lose", font)
+    win_button = button.Button(screen, 525, screen_height - bottom_panel + 70, 200, 63, "You win", font)
+    lose_button = button.Button(screen, 750, screen_height - bottom_panel + 70, 200, 63, "You lose", font)
 
     # --- MAIN GAME LOOP FUNCTION (replaces while run:) ---
     running = True
@@ -168,10 +171,16 @@ def create_main(container, switch_page):
             if hero.alive and current_fighter == 1:
                 action_cooldown += 1
                 if action_cooldown >= action_wait_time:
-                    if attack and target is not None:
+                    attack_button.set_color((0, 255, 0)) # Green ready button
+                else:
+                    attack_button.set_color((255, 0, 0)) # Red not ready button
+                    # attack
+                if action_cooldown >= action_wait_time:
+                    if attack == True and target != None:
                         hero.attack(target)
                         current_fighter += 1
                         action_cooldown = 0
+                        attack_button.set_color((255, 0, 0))
 
             # enemy turn
             if current_fighter == 2 and thief.alive:
@@ -192,17 +201,21 @@ def create_main(container, switch_page):
 
         if game_over != 0:
             if game_over == 1:
-                screen.blit(victory_img, (500, 50))
+                screen.blit(victory_img, (300, 50))
                 if win_button.draw():
+
                     running = False
                     pygame.quit()
                     switch_page("winner")
+
             if game_over == -1:
-                screen.blit(defeat_img, (500, 50))
+                screen.blit(defeat_img, (360, 50))
                 if lose_button.draw():
+
                     running = False
                     pygame.quit()
                     switch_page("loser")
+
 
         # custom cursor
         # pygame.mouse.set_visible(False)
@@ -222,4 +235,6 @@ def create_main(container, switch_page):
 
     # start game loop
     game_loop()
+
     return main
+

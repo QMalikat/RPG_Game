@@ -50,14 +50,12 @@ def create_thief(container, switch_page):
     tk_image = ImageTk.PhotoImage(Bg_image)
 
     background_label = Label(thief, image=tk_image)
-
     background_label.image = tk_image
-
     background_label.grid(row=0, column=0, columnspan=3, sticky="nsew")
 
     # Button frame for choices
     button_frame = Frame(thief, bg="#000000")
-    button_frame.grid(row=2, column=0, columnspan=3, sticky="nsew") 
+    button_frame.grid(row=2, column=1, sticky="nsew") 
 
     #Character pictures - Hero
     hero_image_path = resource_path("Image/Character/Hero.png")
@@ -66,9 +64,7 @@ def create_thief(container, switch_page):
     hero_tk = ImageTk.PhotoImage(hero_image)
 
     hero_label = Label(thief, image=hero_tk, bg='#000000')
-
     hero_label.image = hero_tk
-
     hero_label.grid(row=1, column=0, rowspan=2, sticky="nsew")
 
     #Character pictures - Swift NPC with name of picture
@@ -78,9 +74,7 @@ def create_thief(container, switch_page):
     npc_tk = ImageTk.PhotoImage(npc_image)
 
     npc_label = Label(thief, image=npc_tk, bg='#000000')
-
     npc_label.image = npc_tk
-
     npc_label.grid(row=1, column=2, rowspan=2, sticky="nsew")
 
     #Conversation text
