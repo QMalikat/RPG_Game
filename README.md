@@ -1,10 +1,10 @@
 # D-D_Game user stories 
-Character talk to barkeep (quest master) 
-Character find NPC
-Character talk to NPC
-Character fight NPC
-Character win battle
-Character lose battle
+- Character talk to barkeep (quest master) 
+- Character find NPC
+- Character talk to NPC
+- Character fight NPC
+- Character win battle
+- Character lose battle
 
 # To do list 
 - Make it more obviously when you use a button - hover and maybe click effect. 
