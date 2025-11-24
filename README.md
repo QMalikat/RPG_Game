@@ -1,39 +1,17 @@
-# D-D_Game user stories 
-- Character talk to barkeep (quest master) 
-- Character find NPC
-- Character talk to NPC
-- Character fight NPC
-- Character win battle
-- Character lose battle
+# Skoleprojekt – RPG-spil
+Dette projekt er et skoleprojekt, hvor opgaven var at udvikle et spil, der indeholder en player-karakter, en NPC, samt en kampscene. 
+Spilleren skal kunne interagere med spillets verden, modtage en quest og få forskellige valgmuligheder, der fører til den samme eller forskellige quests.
 
-# To do list 
-- Make it more obviously when you use a button - hover and maybe click effect. 
-- Make it the same screen and dont destroy it
-- Background image resizing
-- Background for the start page
-- Name for the game
-- Embed pygame fight scene into tkinter window
+# Teknologi & Udviklingsproces
+Spillet er udviklet i Python. Det blev oprindeligt skabt i Tkinter som et tekstbaseret RPG-spil.
+For at forbedre kampoplevelsen blev kampsektionen efterfølgende implementeret i Pygame, og hele spillet blev samlet i Pygame.
+Efter test og evaluering blev det dog tydeligt, at Pygame ikke tilføjede nogen reel fordel til spillets funktionalitet. 
+Derfor blev spillet konverteret tilbage til Tkinter, nu med statiske baggrunde for at bevare noget visuel struktur uden ekstra kompleksitet.
 
-# Nice to Have
-- Sound effect 
-- New tavern_win picture
-- New stolen goods picture
-
-# DONE 
-- Fightscene with new pictures and green attack button
-- Conversation text
-- Background imagfe and profile pictures
-- Template
-- Beginning / template
-- Stay
-- Tavern
-- Follow
-- Thief
-- Return goods
-- Loser
-- Winner
-- Tavern_win
-
-# Requirements
-- Pyton, pygame, tkinter
+# Funktioner
+- Tekstbaseret RPG-stil med simple visuelle elementer
+- Player-karakter med interaktive dialoger
+- NPC med quest-givning
+- Valgmuligheder der påvirker quest-forløbet
+- En kampscene 
 
